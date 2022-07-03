@@ -1,36 +1,27 @@
-import Counter from "@components/Counter";
-import logo from "@assets/logo.svg";
+import React, { useContext } from "react";
+import BtnToggle from "../components/BtnToggle/BtnToggle";
+import ThemeContext from "../context/ThemeContext";
 
-export default function Home() {
+function Home() {
+  // UseContext va nous permettre d'utiliser le state depuis ThemeContext dans ce composant
+  const { theme } = useContext(ThemeContext);
+  console.warn(theme);
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
-
-      <Counter />
-
+    <div>
+      <BtnToggle />
+      <h1> Lorem ipsum dolor sit amet consectetur </h1>
       <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
+        {" "}
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas veniam
+        minima assumenda nisi optio temporibus debitis magnam labore libero,
+        commodi repellat, impedit quod delectus sed tempora soluta iusto
+        repellendus dolores! adipisicing elit. Nostrum quam similique
+        reprehenderit rem impedit doloribus quidem architecto sint mollitia
+        optio beatae dolorum, commodi assumenda vero officiis eum pariatur
+        repellat? Facilis?
       </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
-    </header>
+    </div>
   );
 }
+
+export default Home;
